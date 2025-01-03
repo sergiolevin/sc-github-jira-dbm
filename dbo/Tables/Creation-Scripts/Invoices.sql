@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[Invoices2](
+CREATE TABLE [dbo].[Invoices](
 	[InvoiceId] [int] IDENTITY(1,1) NOT NULL,
 	[CustomerId] [int] NOT NULL,
 	[InvoiceDate] [datetime] NULL,
@@ -16,11 +16,11 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF)
 )
 GO
-ALTER TABLE [dbo].[Invoices2] ADD  DEFAULT (getdate()) FOR [InvoiceDate]
+ALTER TABLE [dbo].[Invoices] ADD  DEFAULT (getdate()) FOR [InvoiceDate]
 GO
-ALTER TABLE [dbo].[Invoices2] ADD  DEFAULT ((0)) FOR [PaidAmount]
+ALTER TABLE [dbo].[Invoices] ADD  DEFAULT ((0)) FOR [PaidAmount]
 GO
-ALTER TABLE [dbo].[Invoices2] ADD  DEFAULT ('Pending') FOR [Status]
+ALTER TABLE [dbo].[Invoices] ADD  DEFAULT ('Pending') FOR [Status]
 GO
-ALTER TABLE [dbo].[Invoices2]  WITH CHECK ADD CHECK  (([Status]='Overdue' OR [Status]='Paid' OR [Status]='Pending'))
+ALTER TABLE [dbo].[Invoices]  WITH CHECK ADD CHECK  (([Status]='Overdue' OR [Status]='Paid' OR [Status]='Pending'))
 GO
