@@ -1,1 +1,4 @@
-CREATE PROCEDURE GetAllUsers AS BEGIN SELECT * FROM Users; END;
+CREATE PROCEDURE [dbo].[GetAllUsers] AS 
+-- Demo 
+BEGIN SELECT * FROM Users
+; END;
