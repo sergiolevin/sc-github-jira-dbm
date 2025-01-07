@@ -1,4 +1,4 @@
 CREATE PROCEDURE [dbo].[GetAllUsers] AS 
--- Demo CN
+-- Demo Trianz
 BEGIN SELECT * FROM Users
 ; END;
